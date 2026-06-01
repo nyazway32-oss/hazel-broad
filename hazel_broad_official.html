@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hazel Broad — Official Character Profile</title>
+<meta name="description" content="ハッフルパフ所属・半巨人の血を引く少女、ヘイゼル・ブロードの公式キャラクタープロフィール">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Base ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --gold:       #c9972a;
+  --gold-light: #e8bf5a;
+  --gold-pale:  #f5e4b0;
+  --black:      #0d0b07;
+  --dark:       #1a1509;
+  --dark2:      #251d0e;
+  --mid:        #3b2f16;
+  --text:       #ede3cc;
+  --text-dim:   #b09a72;
+  --text-faint: #7a6540;
+  --border:     rgba(201,151,42,0.25);
+  --border-bright: rgba(201,151,42,0.6);
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ── Starfield background ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 42% 8%,  rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 35%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 12%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5%  60%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 75%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 80%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 90%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(2px 2px at 78% 55%, rgba(201,151,42,0.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 22% 45%, rgba(201,151,42,0.2) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(13,11,7,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 24px 80px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* hero glow */
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(201,151,42,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  animation: fadeUp 1s ease both;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-bright);
+  padding: 8px 22px;
+  margin-bottom: 48px;
+  animation: fadeUp 1s 0.1s ease both;
+}
+
+.hero-badge span {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.hero-name-en {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(44px, 8vw, 86px);
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 4px;
+  line-height: 1.05;
+  text-shadow: 0 0 80px rgba(201,151,42,0.5), 0 2px 30px rgba(0,0,0,0.8);
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero-name-ja {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(16px, 3vw, 22px);
+  letter-spacing: 8px;
+  color: var(--text-dim);
+  margin-top: 14px;
+  animation: fadeUp 1s 0.3s ease both;
+}
+
+.hero-divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 40px auto;
+  animation: fadeUp 1s 0.4s ease both;
+}
+
+.hero-tagline {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-style: italic;
+  color: var(--text-dim);
+  max-width: 560px;
+  line-height: 1.7;
+  animation: fadeUp 1s 0.5s ease both;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeUp 1s 1s ease both;
+}
+
+.scroll-hint span {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ── SECTION COMMON ── */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  max-width: 60px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+/* ── PROFILE STATS ── */
+.stats-section {
+  padding: 80px 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(25,20,10,0.6) 50%, transparent 100%);
+}
+
+.stats-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 60px;
+}
+
+.stat-cell {
+  background: var(--dark);
+  padding: 36px 24px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.stat-cell:hover { background: var(--dark2); }
+
+.stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 18px;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* ── TIMELINE ── */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold), var(--gold), transparent);
+  opacity: 0.4;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 56px;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -44px;
+  top: 6px;
+  width: 10px; height: 10px;
+  border: 1px solid var(--gold);
+  background: var(--dark);
+  transform: rotate(45deg);
+}
+
+.timeline-year {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.timeline-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.timeline-text {
+  color: var(--text-dim);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* ── LORE CARDS ── */
+.lore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.lore-card {
+  border: 1px solid var(--border);
+  background: rgba(25,20,10,0.5);
+  padding: 36px 32px;
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.lore-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--gold);
+  transition: height 0.4s ease;
+}
+
+.lore-card:hover::before { height: 100%; }
+.lore-card:hover {
+  border-color: var(--border-bright);
+  background: rgba(35,28,14,0.7);
+}
+
+.lore-icon {
+  font-size: 28px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.lore-title {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+  margin-bottom: 14px;
+}
+
+.lore-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* ── QUOTE ── */
+.quote-section {
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.quote-mark {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 120px;
+  color: var(--gold);
+  opacity: 0.08;
+  position: absolute;
+  top: -40px; left: -20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.quote-text {
+  font-size: clamp(20px, 3vw, 28px);
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-source {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 28px;
+}
+
+/* ── RELATIONS ── */
+.relations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.relation-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: start;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.relation-item:last-child { border-bottom: none; }
+
+.relation-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--gold-light);
+  padding-top: 2px;
+}
+
+.relation-role {
+  font-size: 11px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+.relation-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* ── NOTE BOX ── */
+.note-box {
+  border-left: 2px solid var(--gold);
+  background: rgba(201,151,42,0.06);
+  padding: 20px 28px;
+  margin-top: 32px;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+/* ── SECTION DIVIDER ── */
+.divider {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.footer-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 22px;
+  color: var(--gold);
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.footer-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 32px;
+}
+
+.footer-note {
+  font-size: 13px;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.1); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .lore-grid { grid-template-columns: 1fr; }
+  .relation-item { grid-template-columns: 1fr; gap: 8px; }
+  .hero-name-en { letter-spacing: 1px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Hazel Broad</div>
+  <ul class="nav-links">
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#world">World</a></li>
+    <li><a href="#relations">Relations</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Original Character · Harry Potter Universe</p>
+
+  <div class="hero-badge">
+    <span>🦡 Hufflepuff · Class of 1991</span>
+  </div>
+
+  <h1 class="hero-name-en">Hazel Broad</h1>
+  <p class="hero-name-ja">ヘイゼル・ブロード</p>
+
+  <div class="hero-divider"></div>
+
+  <p class="hero-tagline">
+    「大きすぎる」と思い込んでいた少女は、<br>
+    その大きさが誰かを包む力だと、まだ知らない。
+  </p>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section" id="profile">
+  <div class="stats-inner">
+
+    <div class="stats-grid reveal">
+      <div class="stat-cell">
+        <div class="stat-label">所属寮</div>
+        <div class="stat-value">Hufflepuff</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">入学年</div>
+        <div class="stat-value">1991年</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">血統</div>
+        <div class="stat-value">半巨人</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">親友</div>
+        <div class="stat-value">ネビル・ロングボトム</div>
+      </div>
+    </div>
+
+    <!-- Profile text -->
+    <div class="reveal">
+      <div class="section-label">About</div>
+      <h2 class="section-title">人間の父と、巨人の母を持つ少女</h2>
+    </div>
+
+    <div class="lore-grid reveal">
+      <div class="lore-card">
+        <span class="lore-icon">📜</span>
+        <div class="lore-title">入学に至る経緯</div>
+        <div class="lore-text">半巨人への差別が根深い魔法界において、その血を引く者がホグワーツに通うことは異例中の異例。ダンブルドア校長がスプラウト先生と協議のうえ、「血筋だけを理由に拒むことはできない」という信念のもと入学を認めた。出自は一部の教師のみが知る、秘められた事実である。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">🦡</span>
+        <div class="lore-title">ハッフルパフの気質</div>
+        <div class="lore-text">忠実、忍耐、偏見のなさ——ハッフルパフの美徳はヘイゼルの核にある。他者の痛みを敏感に感じとり、決して見捨てない。その優しさは、やがて「大きな身体」を排除の理由でなく、誰かを包む力へと変えていく。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">💛</span>
+        <div class="lore-title">繊細な内面</div>
+        <div class="lore-text">入学当初から周囲の男子より頭ひとつ以上大きく、視線を集め続けた。しかし本人は非常に内気で恥ずかしがり屋。大きなリボンを頭につけ、できるだけ小さく見せようとするような少女だった。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">🌿</span>
+        <div class="lore-title">得意なこと</div>
+        <div class="lore-text">薬草学はネビルと並ぶ得意科目。ハグリッドの小屋周辺の植物の世話を手伝いながら、自然と知識が身についた。静かな場所で植物と向き合う時間が、彼女にとっての安らぎでもある。</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="reveal">
+    <div class="section-label">Story</div>
+    <h2 class="section-title">4年生の冬——心の氷が溶けるまで</h2>
+  </div>
+
+  <div class="timeline reveal">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">4年生 · 秋学期</div>
+      <div class="timeline-heading">心ない言葉たち</div>
+      <div class="timeline-text">
+        思春期を迎え、生徒たちの間に恋愛への意識が芽生え始める頃。マルフォイ一派から「苗字の通り横幅（Broad）も特大サイズだな」と嘲笑された。それ自体は予想できた類の言葉だった。<br><br>
+        より深く傷ついたのは、普段は優しいはずのハッフルパフの男子から、悪意のないデリカシーに欠けた言葉を投げかけられたことだった。「怪我させたら大変だから、組体操は別のグループで」——そういった、害意のない善意の排除が、静かに彼女の心を壊していった。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">4年生 · 冬学期</div>
+      <div class="timeline-heading">ハグリッドの小屋という避難所</div>
+      <div class="timeline-text">
+        「自分はみんなの邪魔になる大きな存在なんだ」という思い込みが強まり、大広間での食事や授業への出席がしだいに難しくなっていった。<br><br>
+        スプラウト先生が欠席に気づき、すぐにヘイゼルのもとを訪ねた。無理に教室へ戻すのではなく、「自分のペースで、安全な場所で過ごしなさい」と伝え、ダンブルドアとも相談のうえ、ハグリッドの小屋を正式な「見守りの場」として認める形がとられた。<br><br>
+        ハグリッドは自分も「大きすぎる存在」として生きてきた人間だった。言葉は多くなかったが、ただそこにいてくれるだけで十分だった。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">4年生 · 冬の終わり</div>
+      <div class="timeline-heading">ネビルが繋いだ光</div>
+      <div class="timeline-text">
+        ネビルはヘイゼルが籠もっている間も、何度も一人で会いに来ていた。特別なことは何もしない。隣に座って、薬草学の話をしたり、黙って授業のノートを置いていったりした。<br><br>
+        ある日、ネビルは意を決してハーマイオニーに相談した。「ヘイゼルのことが心配で……でも自分では力が足りなくて」。ハーマイオニーはロンとハリーを誘い、四人でハグリッドの小屋を訪ねた。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">4年生 · 春学期</div>
+      <div class="timeline-heading">初めての再会と、笑顔の復帰</div>
+      <div class="timeline-text">
+        ハリーたちはヘイゼルの体格に一切の戸惑いを見せなかった。ロンはいつものように気さくに話しかけ、ハリーはお菓子をそっと差し出した。ハーマイオニーは薬草学の話をするうちに自然とノートを広げ、いつの間にか二人で書き込みをしていた。<br><br>
+        帰り際、ハリーが言った。「また来てもいいですか」——ヘイゼルはうなずくことしかできなかったが、その夜、久しぶりに笑顔で眠れた。<br><br>
+        数週間後、ヘイゼルはネビルの隣でそっと授業に戻った。最初は下を向いたまま廊下を歩いたが、ハリーたちが笑顔で手を振ってくれると、少しずつ顔を上げられるようになっていった。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="quote-inner">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">
+      誰かがあなたのことを思っている、ということだけは届いていると、ヘイゼルは信じていた。
+    </p>
+    <p class="quote-source">— Hazel Broad, Character Notes</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WORLD -->
+<section id="world">
+  <div class="reveal">
+    <div class="section-label">World</div>
+    <h2 class="section-title">彼女を取り巻く世界</h2>
+  </div>
+
+  <div class="lore-grid reveal">
+    <div class="lore-card">
+      <span class="lore-icon">🏡</span>
+      <div class="lore-title">ハグリッドの小屋</div>
+      <div class="lore-text">ヘイゼルにとって学校の中で最も安心できる場所。ハグリッドは多くを語らないが、その存在そのものがヘイゼルを包んでいる。二人の間には「大きすぎる身体を持つ者だけが知る静けさ」が流れている。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">🌲</span>
+      <div class="lore-title">禁じられた森のグロウプ</div>
+      <div class="lore-text">ハグリッドを通じて知った、森の奥の巨人の純血。言葉は通じない。直接会ったこともない。それでもヘイゼルは、光る石・特大カボチャ・大きな流木の欠片をお土産として届け続けた。グロウプはそれらを宝物のように傍に置いていた。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">🌿</span>
+      <div class="lore-title">温室と薬草学</div>
+      <div class="lore-text">ネビルとともに過ごす薬草学の授業は、学校に戻ったヘイゼルの居場所のひとつ。土の匂い、植物の息吹——静かで、誰も急かさない温室の時間が、彼女の心を少しずつほぐしていった。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">✉️</span>
+      <div class="lore-title">両親からの手紙</div>
+      <div class="lore-text">ヘイゼルの両親は遠くから娘を信じ、温かい手紙を送り続けた。小屋に籠もっていた日々、その手紙だけが外の世界と彼女を繋ぐ糸だった。父の穏やかな文字、母の大きく力強い文字——どちらも「あなたは大丈夫」と言っていた。</div>
+    </div>
+  </div>
+
+  <div class="note-box reveal">
+    半巨人への差別が根深い魔法界において、ヘイゼルの存在はつねに政治的な緊張をはらんでいる。マルフォイ一家のような純血主義者が本気で動けば退学運動にも発展しうる。ダンブルドアとスプラウト先生の静かな庇護が、彼女を守るひとつの盾となっている。
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RELATIONS -->
+<section id="relations">
+  <div class="reveal">
+    <div class="section-label">Relations</div>
+    <h2 class="section-title">交友関係</h2>
+  </div>
+
+  <div class="relations-list reveal">
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ネビル・ロングボトム</div>
+        <div class="relation-role">親友</div>
+      </div>
+      <div class="relation-text">
+        ヘイゼルの最も近くにいる存在。「目立たない・居場所がない」という共通点が二人を引き寄せた。ネビルは多くを語らずとも、ただ隣にいることで彼女の光になり続けた。ヘイゼルが授業に戻れたのも、ネビルの肩がそこにあったからだ。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ハグリッド</div>
+        <div class="relation-role">保護者的な存在</div>
+      </div>
+      <div class="relation-text">
+        同じく半巨人の血を引き、同じように魔法界で「大きすぎる」と感じて生きてきた先達。言葉は多くないが、その背中がヘイゼルに「大きくても、ここにいていい」ということを教えてくれた。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ハーマイオニー・グレンジャー</div>
+        <div class="relation-role">友人</div>
+      </div>
+      <div class="relation-text">
+        ヘイゼルに会いに行くことを率先して提案した一人。偏見がなく、むしろ知的好奇心でヘイゼルに接した。薬草学の話をするうちに自然とノートを広げ、二人でページを埋めていった。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ハリー・ポッター、ロン・ウィーズリー</div>
+        <div class="relation-role">友人</div>
+      </div>
+      <div class="relation-text">
+        ネビルの友人として訪ねてきた二人。ロンの気さくさとハリーの「また来てもいいですか」というひと言が、ヘイゼルの心の扉を少しだけ開いた。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">グロウプ</div>
+        <div class="relation-role">文通のような関係</div>
+      </div>
+      <div class="relation-text">
+        言葉を交わしたことも、直接会ったこともない。それでもヘイゼルはグロウプにお土産を届け続け、グロウプはそれを宝物にした。「誰かがあなたを思っている」——その事実だけで成立している、静かで純粋な繋がり。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Hazel Broad</div>
+  <div class="footer-sub">Original Character · Hufflepuff · Est. 1991</div>
+  <p class="footer-note">
+    Harry Potter and all related characters are the property of J.K. Rowling and Warner Bros.<br>
+    This is a fan-created original character for personal creative use.
+  </p>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
