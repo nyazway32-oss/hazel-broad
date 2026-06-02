@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizarding Souls — Original Characters</title>
+<meta name="description" content="ハリー・ポッター世界のオリジナルキャラクターたちの紹介サイト">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+:root {
+  --bg:       #07060a;
+  --bg2:      #0e0c14;
+  --text:     #e8e0d0;
+  --text-dim: #9a8e7a;
+  --text-faint: #5a5040;
+  --gold:     #c9972a;
+  --gold-light:#e8bf5a;
+  --border:   rgba(201,151,42,0.2);
+  --border-bright: rgba(201,151,42,0.5);
+  --hufflepuff: #c9972a;
+  --gryffindor: #8b2020;
+  --slytherin:  #1a5c3a;
+  --ravenclaw:  #1a3a6e;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── 魔法陣風背景 ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(201,151,42,0.08) 0%, transparent 60%),
+    radial-gradient(1px 1px at 20% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 8%,  rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 80%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 95%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 50%, rgba(201,151,42,0.2) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+}
+
+/* 大きな円形装飾 */
+.hero-ring {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(600px, 90vw);
+  height: min(600px, 90vw);
+  border-radius: 50%;
+  border: 1px solid rgba(201,151,42,0.1);
+  pointer-events: none;
+}
+.hero-ring::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,151,42,0.07);
+}
+.hero-ring::after {
+  content: '';
+  position: absolute;
+  inset: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,151,42,0.05);
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+  animation: fadeUp 1s ease both;
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(36px, 8vw, 80px);
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 2px;
+  line-height: 1.1;
+  text-shadow: 0 0 60px rgba(201,151,42,0.4), 0 2px 40px rgba(0,0,0,0.9);
+  animation: fadeUp 1s 0.1s ease both;
+  margin-bottom: 8px;
+}
+
+.hero-title-sub {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(18px, 4vw, 36px);
+  font-weight: 400;
+  color: rgba(232,191,90,0.6);
+  letter-spacing: 4px;
+  animation: fadeUp 1s 0.2s ease both;
+  margin-bottom: 28px;
+}
+
+.hero-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 0 auto 28px;
+  animation: fadeUp 1s 0.3s ease both;
+}
+
+.hero-desc {
+  font-size: clamp(15px, 2vw, 18px);
+  font-style: italic;
+  color: var(--text-dim);
+  max-width: 480px;
+  line-height: 1.8;
+  animation: fadeUp 1s 0.4s ease both;
+  margin-bottom: 56px;
+}
+
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeUp 1s 0.8s ease both;
+}
+.scroll-hint span {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* ── CHARACTERS SECTION ── */
+.characters {
+  position: relative;
+  z-index: 1;
+  padding: 80px 24px 120px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(20px, 3vw, 28px);
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 64px;
+  font-weight: 400;
+}
+
+/* ── CHARACTER GRID ── */
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* ── CHARACTER CARD ── */
+.char-card {
+  position: relative;
+  border: 1px solid var(--border);
+  background: rgba(14,12,20,0.8);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: border-color 0.4s, transform 0.4s;
+}
+
+.char-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-4px);
+}
+
+/* 寮カラーの光 */
+.char-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--house-color, var(--gold));
+  opacity: 0.8;
+}
+
+.char-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top, rgba(var(--house-rgb, 201,151,42), 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  transition: opacity 0.4s;
+  opacity: 0;
+}
+
+.char-card:hover::after { opacity: 1; }
+
+.card-inner {
+  padding: 36px 32px 32px;
+}
+
+.card-house {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--house-color, var(--gold));
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-house::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--house-color, var(--gold));
+}
+
+.card-name-en {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(20px, 3vw, 26px);
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.char-card:hover .card-name-en {
+  color: var(--gold-light);
+}
+
+.card-name-ja {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--text-faint);
+  margin-bottom: 20px;
+}
+
+.card-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--border-bright);
+  margin-bottom: 20px;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 28px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.card-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  color: var(--text-faint);
+}
+
+.card-link {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--house-color, var(--gold));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: gap 0.3s;
+}
+
+.char-card:hover .card-link { gap: 16px; }
+
+.card-link::after {
+  content: '→';
+  font-size: 14px;
+}
+
+/* ── COMING SOON CARD ── */
+.char-card.coming-soon {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.char-card.coming-soon .card-name-en {
+  color: var(--text-faint);
+}
+
+.coming-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  display: inline-block;
+}
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.footer-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 28px;
+}
+
+.footer-note {
+  font-size: 12px;
+  color: var(--text-faint);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes scrollPulse {
+  0%,100% { opacity:0.3; }
+  50%      { opacity:1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .char-grid { grid-template-columns: 1fr; }
+  .card-inner { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ring"></div>
+
+  <p class="hero-eyebrow">Fan · Original Characters · Harry Potter Universe</p>
+  <h1 class="hero-title">Wizarding</h1>
+  <p class="hero-title-sub">Souls</p>
+  <div class="hero-divider"></div>
+  <p class="hero-desc">
+    魔法世界に生きる、もうひとりの魂たち。<br>
+    ここは彼女たちの物語が宿る場所。
+  </p>
+
+  <div class="scroll-hint">
+    <span>Characters</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- CHARACTERS -->
+<section class="characters">
+  <p class="section-label reveal">Cast</p>
+  <h2 class="section-title reveal">登場するキャラクターたち</h2>
+
+  <div class="char-grid">
+
+    <!-- ヘイゼル -->
+    <a class="char-card reveal"
+       href="hazel_broad_official.html"
+       style="--house-color: #c9972a; --house-rgb: 201,151,42;">
+      <div class="card-inner">
+        <div class="card-house">Hufflepuff · 1991</div>
+        <div class="card-name-en">Hazel Broad</div>
+        <div class="card-name-ja">ヘイゼル・ブロード</div>
+        <div class="card-divider"></div>
+        <p class="card-desc">
+          「大きすぎる」と思い込んでいた少女は、その大きさが誰かを包む力だと、まだ知らない。
+        </p>
+        <div class="card-tags">
+          <span class="card-tag">半巨人</span>
+          <span class="card-tag">4年生</span>
+          <span class="card-tag">ネビルの親友</span>
+          <span class="card-tag">ハグリッドの小屋</span>
+        </div>
+        <div class="card-link">View Profile</div>
+      </div>
+    </a>
+
+    <!-- Coming Soon 1 -->
+    <div class="char-card coming-soon reveal"
+         style="--house-color: #8b2020;">
+      <div class="card-inner">
+        <div class="card-house">Gryffindor</div>
+        <div class="card-name-en">???</div>
+        <div class="card-name-ja">coming soon</div>
+        <div class="card-divider"></div>
+        <p class="card-desc">新しいキャラクターが、もうすぐここに。</p>
+        <div class="coming-label">Coming Soon</div>
+      </div>
+    </div>
+
+    <!-- Coming Soon 2 -->
+    <div class="char-card coming-soon reveal"
+         style="--house-color: #1a3a6e;">
+      <div class="card-inner">
+        <div class="card-house">Ravenclaw</div>
+        <div class="card-name-en">???</div>
+        <div class="card-name-ja">coming soon</div>
+        <div class="card-divider"></div>
+        <p class="card-desc">新しいキャラクターが、もうすぐここに。</p>
+        <div class="coming-label">Coming Soon</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Wizarding Souls</div>
+  <div class="footer-sub">Original Characters · Fan Creative Works</div>
+  <p class="footer-note">
+    Harry Potter and all related characters are the property of J.K. Rowling and Warner Bros.<br>
+    All original characters are fan creations for personal creative use only.
+  </p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
