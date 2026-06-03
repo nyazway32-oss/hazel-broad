@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcyone Wren — Official Character Profile</title>
+<meta name="description" content="レイブンクロー所属・マグル生まれの天体観測少女、アルキュオネ・レンの公式キャラクタープロフィール">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --blue:        #1a3a6e;
+  --blue-light:  #4a7ab5;
+  --blue-pale:   #c0d4f0;
+  --silver:      #a8b8d0;
+  --silver-light:#d0e0f0;
+  --black:       #06080f;
+  --dark:        #080c18;
+  --dark2:       #0e1428;
+  --text:        #e8eef8;
+  --text-dim:    #8898b8;
+  --text-faint:  #485878;
+  --border:      rgba(74,122,181,0.2);
+  --border-bright:rgba(74,122,181,0.5);
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(26,58,110,0.15) 0%, transparent 60%),
+    radial-gradient(1px 1px at 12% 15%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 8%,  rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58% 22%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 5%,  rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 30%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5%  45%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 48% 55%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22% 80%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 85%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(2px 2px at 40% 35%, rgba(74,122,181,0.4) 0%, transparent 100%),
+    radial-gradient(2px 2px at 65% 50%, rgba(168,184,208,0.3) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(6,8,15,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--blue-light); }
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 24px 80px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(26,58,110,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 28px;
+  animation: fadeUp 1s ease both;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-bright);
+  padding: 8px 22px;
+  margin-bottom: 48px;
+  animation: fadeUp 1s 0.1s ease both;
+}
+
+.hero-badge span {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+}
+
+.hero-name-en {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(36px, 7vw, 80px);
+  font-weight: 700;
+  color: var(--silver-light);
+  letter-spacing: 3px;
+  line-height: 1.05;
+  text-shadow: 0 0 80px rgba(74,122,181,0.5), 0 2px 30px rgba(0,0,0,0.8);
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero-name-ja {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(14px, 2.5vw, 20px);
+  letter-spacing: 8px;
+  color: var(--text-dim);
+  margin-top: 14px;
+  animation: fadeUp 1s 0.3s ease both;
+}
+
+.hero-divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--blue-light), transparent);
+  margin: 40px auto;
+  animation: fadeUp 1s 0.4s ease both;
+}
+
+.hero-tagline {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-style: italic;
+  color: var(--text-dim);
+  max-width: 560px;
+  line-height: 1.7;
+  animation: fadeUp 1s 0.5s ease both;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeUp 1s 1s ease both;
+}
+
+.scroll-hint span {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--blue-light), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  max-width: 60px;
+  background: var(--blue-light);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+.stats-section {
+  padding: 80px 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(8,12,24,0.6) 50%, transparent 100%);
+}
+
+.stats-inner { max-width: 1000px; margin: 0 auto; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 60px;
+}
+
+.stat-cell {
+  background: var(--dark);
+  padding: 36px 24px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.stat-cell:hover { background: var(--dark2); }
+
+.stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 17px;
+  color: var(--blue-light);
+  font-weight: 600;
+}
+
+.lore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.lore-card {
+  border: 1px solid var(--border);
+  background: rgba(8,12,24,0.5);
+  padding: 36px 32px;
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.lore-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--blue-light);
+  transition: height 0.4s ease;
+}
+
+.lore-card:hover::before { height: 100%; }
+.lore-card:hover {
+  border-color: var(--border-bright);
+  background: rgba(14,20,40,0.7);
+}
+
+.lore-icon { font-size: 28px; margin-bottom: 18px; display: block; }
+
+.lore-title {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--blue-light);
+  margin-bottom: 14px;
+}
+
+.lore-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--blue-light), var(--blue-light), transparent);
+  opacity: 0.4;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 56px;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -44px; top: 6px;
+  width: 10px; height: 10px;
+  border: 1px solid var(--blue-light);
+  background: var(--dark);
+  transform: rotate(45deg);
+}
+
+.timeline-year {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 8px;
+}
+
+.timeline-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.timeline-text {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.relations-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.relation-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: start;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.relation-item:last-child { border-bottom: none; }
+
+.relation-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--blue-light);
+  padding-top: 2px;
+}
+
+.relation-role {
+  font-size: 11px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+.relation-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.quote-section {
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.quote-mark {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 120px;
+  color: var(--blue-light);
+  opacity: 0.08;
+  position: absolute;
+  top: -40px; left: -20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.quote-text {
+  font-size: clamp(20px, 3vw, 26px);
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-source {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 28px;
+}
+
+.note-box {
+  border-left: 2px solid var(--blue-light);
+  background: rgba(74,122,181,0.06);
+  padding: 20px 28px;
+  margin-top: 32px;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+.divider {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  color: var(--text-faint);
+  background: rgba(74,122,181,0.06);
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.footer-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 22px;
+  color: var(--blue-light);
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.footer-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 32px;
+}
+
+.footer-note {
+  font-size: 13px;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .lore-grid { grid-template-columns: 1fr; }
+  .relation-item { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Alcyone Wren</div>
+  <ul class="nav-links">
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#world">World</a></li>
+    <li><a href="#relations">Relations</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Original Character · Harry Potter Universe</p>
+
+  <div class="hero-badge">
+    <span>🦅 Ravenclaw · Class of 1992</span>
+  </div>
+
+  <h1 class="hero-name-en">Alcyone Wren</h1>
+  <p class="hero-name-ja">アルキュオネ・レン</p>
+
+  <div class="hero-divider"></div>
+
+  <p class="hero-tagline">
+    魔法界のすべてが、彼女には星のように輝いて見えた。<br>
+    マグルの世界では知らなかった、この目の使い方を。
+  </p>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section" id="profile">
+  <div class="stats-inner">
+
+    <div class="stats-grid reveal">
+      <div class="stat-cell">
+        <div class="stat-label">所属寮</div>
+        <div class="stat-value">Ravenclaw</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">入学年</div>
+        <div class="stat-value">1992年</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">血統</div>
+        <div class="stat-value">マグル生まれ</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">得意科目</div>
+        <div class="stat-value">天文学</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">About</div>
+      <h2 class="section-title">魔法界に初めて居場所を見つけた少女</h2>
+    </div>
+
+    <div class="lore-grid reveal">
+      <div class="lore-card">
+        <span class="lore-icon">🌙</span>
+        <div class="lore-title">見た目</div>
+        <div class="lore-text">艶のある黒髪をさらりと流した、神秘的な雰囲気の少女。夜の天体観測塔では、その黒髪が星空に溶け込むようだと言われる。普段は静かで目立たないが、魔法界の不思議なものに出会った瞬間、目が別人のように輝く。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">⭐</span>
+        <div class="lore-title">名前の由来</div>
+        <div class="lore-text">ギリシャ神話の「アルキュオネとケウクス」より。嵐で海に沈んだ夫を追い、神々によって二人ともカワセミに変えられた——愛と悲しみと奇跡の物語。苗字「レン（Wren）」はミソサザイ、カワセミへの連想から。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">🔭</span>
+        <div class="lore-title">天体観測への愛</div>
+        <div class="lore-text">マグルの世界でも夜空を眺め続けた。しかし魔法界の天体観測は次元が違った。動く星図、魔法の望遠鏡、惑星の動きが魔法に影響する世界——それを初めて知った夜、アルキュオネは泣いた。嬉しくて。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">✨</span>
+        <div class="lore-title">魔法界への純粋な驚き</div>
+        <div class="lore-text">マグル生まれゆえ、魔法界のすべてが新鮮だった。動く絵画、幽霊、魔法薬、変身術——何を見ても目が輝く。その純粋さはレイブンクローの知的好奇心とぴったり重なり、自然と学びへの意欲につながっていった。</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="reveal">
+    <div class="section-label">Story</div>
+    <h2 class="section-title">マグルの孤独から、星空の居場所へ</h2>
+  </div>
+
+  <div class="timeline reveal">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">入学前</div>
+      <div class="timeline-heading">マグルの世界での孤独</div>
+      <div class="timeline-text">
+        マグルの学校では、夜空の話をしても誰も興味を持たなかった。星座の名前を覚えていても、神話の話をしても、「変わった子」と思われるだけだった。アルキュオネはいつも少し、周囲からずれていた。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1992年 · 入学</div>
+      <div class="timeline-heading">ホグワーツ、初めての居場所</div>
+      <div class="timeline-text">
+        ホグワーツへの入学通知が届いた夜、アルキュオネはずっと夜空を見ていた。「やっぱり星が知っていた」と思った。<br><br>
+        入学してすぐ、魔法界のすべてが輝いて見えた。動く階段、幽霊、魔法薬の授業、変身術——何を見ても目が丸くなった。レイブンクローの同室の子たちは、そんなアルキュオネを不思議そうに、でも悪くない気持ちで眺めていた。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">1992年 · 秋学期</div>
+      <div class="timeline-heading">ルーナとの出会い</div>
+      <div class="timeline-text">
+        天文学の授業で、隣の席に座ったのがルーナ・ラブグッドだった。ルーナは同学年で、周りから少し浮いた存在だった。アルキュオネはその横顔を見て、かつての自分を思い出した。<br><br>
+        「星、好き？」——アルキュオネが先に声をかけた。ルーナは少し驚いてから、嬉しそうに答えた。「ええ、とても」。それだけで十分だった。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">それ以降</div>
+      <div class="timeline-heading">夜空の下で育つ友情</div>
+      <div class="timeline-text">
+        二人は夜の天体観測塔でよく一緒にいた。ルーナは不思議な生き物の話をして、アルキュオネは星座の神話を話した。どちらも信じてもらえないような話ばかりだったが、二人の間では何でも本当のことだった。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="quote-inner">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">
+      マグルの世界でもずっと夜空を見ていた。<br>
+      でもここでは、夜空が答えてくれる気がする。
+    </p>
+    <p class="quote-source">— Alcyone Wren</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WORLD -->
+<section id="world">
+  <div class="reveal">
+    <div class="section-label">World</div>
+    <h2 class="section-title">彼女を取り巻く世界</h2>
+  </div>
+
+  <div class="lore-grid reveal">
+    <div class="lore-card">
+      <span class="lore-icon">🏰</span>
+      <div class="lore-title">天体観測塔</div>
+      <div class="lore-text">アルキュオネにとって、ホグワーツで最も好きな場所。夜中に一人でいることも多く、そこで星を眺めている時だけは、マグルだった頃の孤独も、うまく馴染めない日常も、全部遠くなる気がした。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">📚</span>
+      <div class="lore-title">図書館と星図</div>
+      <div class="lore-text">天文学の参考書だけでなく、ギリシャ神話やケルト神話の本も読み漁る。星座の名前の由来を調べ始めると止まらない。自分の名前の神話を初めて読んだ夜は、静かに泣いた。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">🐦</span>
+      <div class="lore-title">カワセミへの想い</div>
+      <div class="lore-text">自分の名前の由来であるアルキュオネとケウクスの神話が好きだ。悲しい話だけれど、二人が最後に鳥になって一緒にいられたことが、どうしても美しいと思う。冬の穏やかな海を「カワセミの日々」と呼ぶことも知っている。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">🌠</span>
+      <div class="lore-title">マグル界との繋がり</div>
+      <div class="lore-text">家族はマグルだが、両親は娘の魔法を誇りに思っている。夏休みに帰るたびに、アルキュオネは魔法界の話を聞かせ、両親は目を輝かせて聞く。その時の両親の顔が、アルキュオネ自身の「目が輝く顔」にそっくりだと、本人は気づいていない。</div>
+    </div>
+  </div>
+
+  <div class="note-box reveal">
+    マグル生まれゆえの純粋な驚きと好奇心は、レイブンクローの「知を愛する」精神と深く共鳴している。彼女が魔法界に感じる輝きは、慣れることなくずっと続く。それがアルキュオネ・レンという人間の、最も美しい部分だ。
+  </div>
+
+  <div class="tag-row reveal">
+    <span class="tag">Ravenclaw</span>
+    <span class="tag">Muggle-born</span>
+    <span class="tag">Astronomy</span>
+    <span class="tag">Luna's friend</span>
+    <span class="tag">Black hair</span>
+    <span class="tag">Greek myth</span>
+    <span class="tag">Year 1992</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RELATIONS -->
+<section id="relations">
+  <div class="reveal">
+    <div class="section-label">Relations</div>
+    <h2 class="section-title">交友関係</h2>
+  </div>
+
+  <div class="relations-list reveal">
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ルーナ・ラブグッド</div>
+        <div class="relation-role">親友</div>
+      </div>
+      <div class="relation-text">
+        天文学の授業で隣に座り、アルキュオネから声をかけた。お互い周囲に馴染みにくかった者同士、言葉は少なくても通じ合える関係。夜の観測塔で並んで空を見上げる時間が、二人の間で最も大切な時間だ。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">レイブンクローの同室たち</div>
+        <div class="relation-role">寮の仲間</div>
+      </div>
+      <div class="relation-text">
+        馴染むのに少し時間がかかったが、マグル界のことを話すと興味を持って聞いてくれる子がいた。「マグルってそんなことするの？」という会話から、少しずつ距離が縮まっていった。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ハリー・ポッターたち</div>
+        <div class="relation-role">先輩</div>
+      </div>
+      <div class="relation-text">
+        ルーナを通じて知り合った先輩たち。ハーマイオニーとは本の話で盛り上がることがある。マグル生まれ同士という共通点もあり、自然と親しみを感じている。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Alcyone Wren</div>
+  <div class="footer-sub">Original Character · Ravenclaw · Est. 1992</div>
+  <p class="footer-note">
+    Harry Potter and all related characters are the property of J.K. Rowling and Warner Bros.<br>
+    This is a fan-created original character for personal creative use.
+  </p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

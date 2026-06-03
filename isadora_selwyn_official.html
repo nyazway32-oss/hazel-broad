@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isadora Selwyn — Official Character Profile</title>
+<meta name="description" content="スリザリン所属・聖28一族セルウィン家の一人娘、イザドーラ・セルウィンの公式キャラクタープロフィール">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --green:        #1a4a2e;
+  --green-light:  #3a8a5e;
+  --green-bright: #4aaa72;
+  --silver:       #a8c0b0;
+  --silver-light: #d0e8d8;
+  --black:        #060a08;
+  --dark:         #080e0a;
+  --dark2:        #0e1a12;
+  --text:         #e0ede5;
+  --text-dim:     #7a9e88;
+  --text-faint:   #405848;
+  --border:       rgba(58,138,94,0.2);
+  --border-bright:rgba(58,138,94,0.5);
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(26,74,46,0.18) 0%, transparent 60%),
+    radial-gradient(1px 1px at 18% 12%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 6%,  rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 18%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 8%,  rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(2px 2px at 30% 40%, rgba(58,138,94,0.3) 0%, transparent 100%),
+    radial-gradient(2px 2px at 70% 60%, rgba(168,192,176,0.2) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(6,10,8,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--green-light);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--green-light); }
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 24px 80px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(26,74,46,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 28px;
+  animation: fadeUp 1s ease both;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-bright);
+  padding: 8px 22px;
+  margin-bottom: 48px;
+  animation: fadeUp 1s 0.1s ease both;
+}
+
+.hero-badge span {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green-light);
+}
+
+.hero-name-en {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(36px, 7vw, 78px);
+  font-weight: 700;
+  color: var(--silver-light);
+  letter-spacing: 3px;
+  line-height: 1.05;
+  text-shadow: 0 0 80px rgba(58,138,94,0.4), 0 2px 30px rgba(0,0,0,0.8);
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero-name-ja {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(14px, 2.5vw, 20px);
+  letter-spacing: 8px;
+  color: var(--text-dim);
+  margin-top: 14px;
+  animation: fadeUp 1s 0.3s ease both;
+}
+
+.hero-divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--green-light), transparent);
+  margin: 40px auto;
+  animation: fadeUp 1s 0.4s ease both;
+}
+
+.hero-tagline {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-style: italic;
+  color: var(--text-dim);
+  max-width: 560px;
+  line-height: 1.7;
+  animation: fadeUp 1s 0.5s ease both;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeUp 1s 1s ease both;
+}
+
+.scroll-hint span {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--green-light), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  max-width: 60px;
+  background: var(--green-light);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+.stats-section {
+  padding: 80px 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(8,14,10,0.6) 50%, transparent 100%);
+}
+
+.stats-inner { max-width: 1000px; margin: 0 auto; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 60px;
+}
+
+.stat-cell {
+  background: var(--dark);
+  padding: 36px 24px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.stat-cell:hover { background: var(--dark2); }
+
+.stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 17px;
+  color: var(--green-light);
+  font-weight: 600;
+}
+
+.lore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.lore-card {
+  border: 1px solid var(--border);
+  background: rgba(8,14,10,0.5);
+  padding: 36px 32px;
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.lore-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--green-light);
+  transition: height 0.4s ease;
+}
+
+.lore-card:hover::before { height: 100%; }
+.lore-card:hover {
+  border-color: var(--border-bright);
+  background: rgba(14,26,18,0.7);
+}
+
+.lore-icon { font-size: 28px; margin-bottom: 18px; display: block; }
+
+.lore-title {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--green-light);
+  margin-bottom: 14px;
+}
+
+.lore-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--green-light), var(--green-light), transparent);
+  opacity: 0.4;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 56px;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -44px; top: 6px;
+  width: 10px; height: 10px;
+  border: 1px solid var(--green-light);
+  background: var(--dark);
+  transform: rotate(45deg);
+}
+
+.timeline-year {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 8px;
+}
+
+.timeline-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.timeline-text {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* QUOTE CARDS */
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.quote-card {
+  border: 1px solid var(--border);
+  background: rgba(8,14,10,0.5);
+  padding: 28px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.quote-card:hover { border-color: var(--border-bright); }
+
+.quote-card-mark {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 60px;
+  color: var(--green-light);
+  opacity: 0.1;
+  position: absolute;
+  top: -10px; left: 10px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.quote-card-text {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 12px;
+}
+
+.quote-card-note {
+  font-size: 13px;
+  color: var(--text-faint);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* RELATIONS */
+.relations-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.relation-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: start;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.relation-item:last-child { border-bottom: none; }
+
+.relation-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--green-light);
+  padding-top: 2px;
+}
+
+.relation-role {
+  font-size: 11px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+.relation-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.note-box {
+  border-left: 2px solid var(--green-light);
+  background: rgba(58,138,94,0.06);
+  padding: 20px 28px;
+  margin-top: 32px;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+.divider {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  color: var(--text-faint);
+  background: rgba(58,138,94,0.06);
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.footer-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 22px;
+  color: var(--green-light);
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.footer-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 32px;
+}
+
+.footer-note {
+  font-size: 13px;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .lore-grid { grid-template-columns: 1fr; }
+  .quote-grid { grid-template-columns: 1fr; }
+  .relation-item { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Isadora Selwyn</div>
+  <ul class="nav-links">
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#quotes">Quotes</a></li>
+    <li><a href="#relations">Relations</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Original Character · Harry Potter Universe</p>
+
+  <div class="hero-badge">
+    <span>🐍 Slytherin · Class of 1991</span>
+  </div>
+
+  <h1 class="hero-name-en">Isadora Selwyn</h1>
+  <p class="hero-name-ja">イザドーラ・セルウィン</p>
+
+  <div class="hero-divider"></div>
+
+  <p class="hero-tagline">
+    彼女が微笑む時、誰かが傷つく。<br>
+    ただし、気づくのはいつも少し後のこと。
+  </p>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section" id="profile">
+  <div class="stats-inner">
+
+    <div class="stats-grid reveal">
+      <div class="stat-cell">
+        <div class="stat-label">所属寮</div>
+        <div class="stat-value">Slytherin</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">入学年</div>
+        <div class="stat-value">1991年</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">血統</div>
+        <div class="stat-value">純血・聖28一族</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">得意科目</div>
+        <div class="stat-value">呪文学</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">About</div>
+      <h2 class="section-title">セルウィン家の完璧なお嬢様、ただし笑顔が一番怖い</h2>
+    </div>
+
+    <div class="lore-grid reveal">
+      <div class="lore-card">
+        <span class="lore-icon">🌹</span>
+        <div class="lore-title">見た目</div>
+        <div class="lore-text">艶のある栗色の巻き髪を丁寧に整え、いつも細い金のネックレスをつけている。所作が美しく、背筋が常にまっすぐだ。その上品な笑顔を見て「怖い」と思う人間は、スリザリンの中では賢い部類に入る。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">🐍</span>
+        <div class="lore-title">クイーンビーの流儀</div>
+        <div class="lore-text">怒鳴らない。泣かない。脅さない。イザドーラの武器は、常に丁寧な言葉と完璧な笑顔だ。言われた相手が部屋を出てから「……今、馬鹿にされたのでは？」と気づく頃には、もう遅い。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">⚡</span>
+        <div class="lore-title">呪文学の使い手</div>
+        <div class="lore-text">得意科目は呪文学。呪文の扱いが精巧で、無駄がない。「魔法は感情ではなく意志で使うもの」というのが彼女の持論。その冷静な扇動は、対戦相手にとって非常に厄介だ。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">💛</span>
+        <div class="lore-title">マルフォイへの恋（コメディ枠）</div>
+        <div class="lore-text">自覚はある。自分から動く気もある。問題は、動こうとすると謎に先生みたいな言動になってしまうことだ。「その呪文の使い方、少し惜しいわ。教えてあげましょうか」——本人はクールなつもりである。</div>
+      </div>
+    </div>
+
+    <div class="tag-row reveal">
+      <span class="tag">Slytherin</span>
+      <span class="tag">Pure-blood</span>
+      <span class="tag">Sacred 28</span>
+      <span class="tag">Charms</span>
+      <span class="tag">Queen Bee</span>
+      <span class="tag">Chestnut hair</span>
+      <span class="tag">Only child</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="reveal">
+    <div class="section-label">Story</div>
+    <h2 class="section-title">イザドーラ・セルウィンを作った瞬間たち</h2>
+  </div>
+
+  <div class="timeline reveal">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">7歳の夏</div>
+      <div class="timeline-heading">最初の魔法と、父の言葉</div>
+      <div class="timeline-text">
+        セルウィン家の晩餐会で、退屈した幼いイザドーラが怒りのあまりテーブルの花瓶を爆発させた。客たちが騒ぐ中、父は静かに言った。「イザドーラ、淑女は感情を顔に出さない」。その日から彼女は、怒りを笑顔に変える練習を始めた。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">3年生</div>
+      <div class="timeline-heading">パンジーとの静かな暗闘</div>
+      <div class="timeline-text">
+        スリザリンの女子グループの主導権をめぐり、パンジー・パーキンソンと静かな戦いがあった。怒鳴り合いも泣き落としもなかった。イザドーラはただ笑顔のまま、パンジーの発言をことごとく上品に否定し続けた。1ヶ月後、誰もがイザドーラの方を先に見るようになっていた。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">4年生</div>
+      <div class="timeline-heading">図書館での気づき</div>
+      <div class="timeline-text">
+        図書館でマルフォイが一人で勉強しているのを見た。いつものように取り巻きもなく、ただ静かにページをめくっていた。その横顔を見た瞬間、イザドーラは自分の胸に手を当てた。「……これは困った」と思った。その日から彼女のコメディが始まった。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">5年生</div>
+      <div class="timeline-heading">ハーマイオニーへの2点差</div>
+      <div class="timeline-text">
+        呪文学でハーマイオニー・グレンジャーに負けた。点数にして2点差。イザドーラは笑顔のまま「おめでとう、グレンジャー」と言った。しかしその夜、寮の自室で枕を一回だけ思い切り叩いた。それだけだった。
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note-box reveal">
+    イザドーラは家の期待通りに生きている。純血主義の価値観を疑ったことは、少なくとも表向きはない。ただ、彼女の「笑顔で刺す」スタイルは家で仕込まれたものだ——ということを、本人はおそらく気づいていない。
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTES -->
+<section id="quotes">
+  <div class="reveal">
+    <div class="section-label">Quotes</div>
+    <h2 class="section-title">イザドーラの言葉たち</h2>
+  </div>
+
+  <div class="quote-grid reveal">
+
+    <div class="quote-card">
+      <div class="quote-card-mark">"</div>
+      <div class="quote-card-text">あなたって本当に努力家よね。才能がなくてもここまでやれるんだから、感心するわ。</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-card-mark">"</div>
+      <div class="quote-card-text">その髪型、とても個性的ね。……勇気があって羨ましいわ。</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-card-mark">"</div>
+      <div class="quote-card-text">まあ、よく発言できたわね。間違いを恐れない姿勢、見習いたいくらいよ。</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-card-mark">"</div>
+      <div class="quote-card-text">グレンジャー、あなたの答えは正確ね。教科書通りで安心するわ。</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-card-mark">"</div>
+      <div class="quote-card-text">マルフォイ、その呪文の使い方、少し惜しいわ。教えてあげましょうか。</div>
+      <div class="quote-card-note">（内心：なんで私いま教師みたいなことしてるの）</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-card-mark">"</div>
+      <div class="quote-card-text">怒っていないわ。ただ、覚えているだけよ。</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-card-mark">"</div>
+      <div class="quote-card-text">私が黙っている時は、何も考えていないんじゃないの。多すぎて選んでいるだけよ。</div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-card-mark">"</div>
+      <div class="quote-card-text">私が笑っている時ほど、怒っているって、あなただけが知っているのよ。</div>
+      <div class="quote-card-note">（親しい人への、数少ない本音）</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RELATIONS -->
+<section id="relations">
+  <div class="reveal">
+    <div class="section-label">Relations</div>
+    <h2 class="section-title">交友関係</h2>
+  </div>
+
+  <div class="relations-list reveal">
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ドラコ・マルフォイ</div>
+        <div class="relation-role">恋愛対象（コメディ枠）</div>
+      </div>
+      <div class="relation-text">
+        親同士が仲良いため自然と関わる機会が多い。気持ちに自覚はあるし自分から動く気もある。ただし動くたびに謎に「教えてあげましょうか」「それは惜しいわね」という先生モードになってしまう。本人はクールなつもりである。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">パンジー・パーキンソン</div>
+        <div class="relation-role">同じスリザリンの女子</div>
+      </div>
+      <div class="relation-text">
+        表面上は仲良し。しかし3年生の暗闘以来、お互いの立場ははっきりしている。パンジーはイザドーラの笑顔を見ると少し背筋が伸びる。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ハーマイオニー・グレンジャー</div>
+        <div class="relation-role">ライバル（一方的に）</div>
+      </div>
+      <div class="relation-text">
+        呪文学で2点差をつけられた相手。表向きは「おめでとう」と言える程度には大人だが、枕を叩いた夜のことは忘れていない。ハーマイオニーはイザドーラのことを特に意識していない。それがまた癪だ。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">セルウィン家の両親</div>
+        <div class="relation-role">家族</div>
+      </div>
+      <div class="relation-text">
+        純血主義的な価値観を持つ家柄。父の「淑女は感情を顔に出さない」という言葉が、イザドーラの原点になっている。期待には応えているが、それが本当に自分の望みかどうかは、まだ考えたことがない。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Isadora Selwyn</div>
+  <div class="footer-sub">Original Character · Slytherin · Est. 1991</div>
+  <p class="footer-note">
+    Harry Potter and all related characters are the property of J.K. Rowling and Warner Bros.<br>
+    This is a fan-created original character for personal creative use.
+  </p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

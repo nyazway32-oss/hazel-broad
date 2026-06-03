@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emrys Fenn — Official Character Profile</title>
+<meta name="description" content="グリフィンドール所属・1990年入学の陽キャ男子、エムリス・フェンの公式キャラクタープロフィール">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --scarlet:      #8b1a1a;
+  --scarlet-light:#c0392b;
+  --scarlet-pale: #f5d5d0;
+  --gold:         #c9972a;
+  --gold-light:   #e8bf5a;
+  --black:        #0d0b07;
+  --dark:         #130808;
+  --dark2:        #1e0e0e;
+  --mid:          #3b1616;
+  --text:         #f0e8e0;
+  --text-dim:     #b09080;
+  --text-faint:   #7a5040;
+  --border:       rgba(139,26,26,0.3);
+  --border-bright:rgba(192,57,43,0.6);
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(139,26,26,0.12) 0%, transparent 60%),
+    radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 42% 8%,  rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 35%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 12%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 55%, rgba(192,57,43,0.25) 0%, transparent 100%),
+    radial-gradient(2px 2px at 25% 70%, rgba(201,151,42,0.2) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(13,8,8,0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--scarlet-light);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--scarlet-light); }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 24px 80px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(139,26,26,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--scarlet-light);
+  margin-bottom: 28px;
+  animation: fadeUp 1s ease both;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-bright);
+  padding: 8px 22px;
+  margin-bottom: 48px;
+  animation: fadeUp 1s 0.1s ease both;
+}
+
+.hero-badge span {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--scarlet-light);
+}
+
+.hero-name-en {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(44px, 8vw, 86px);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 4px;
+  line-height: 1.05;
+  text-shadow: 0 0 80px rgba(139,26,26,0.6), 0 2px 30px rgba(0,0,0,0.8);
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero-name-ja {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(16px, 3vw, 22px);
+  letter-spacing: 8px;
+  color: var(--text-dim);
+  margin-top: 14px;
+  animation: fadeUp 1s 0.3s ease both;
+}
+
+.hero-divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--scarlet-light), transparent);
+  margin: 40px auto;
+  animation: fadeUp 1s 0.4s ease both;
+}
+
+.hero-tagline {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-style: italic;
+  color: var(--text-dim);
+  max-width: 560px;
+  line-height: 1.7;
+  animation: fadeUp 1s 0.5s ease both;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeUp 1s 1s ease both;
+}
+
+.scroll-hint span {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--scarlet-light), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* SECTIONS */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 100px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--scarlet-light);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  max-width: 60px;
+  background: var(--scarlet-light);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+/* STATS */
+.stats-section {
+  padding: 80px 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(30,10,10,0.6) 50%, transparent 100%);
+}
+
+.stats-inner { max-width: 1000px; margin: 0 auto; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 60px;
+}
+
+.stat-cell {
+  background: var(--dark);
+  padding: 36px 24px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.stat-cell:hover { background: var(--dark2); }
+
+.stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 17px;
+  color: var(--scarlet-light);
+  font-weight: 600;
+}
+
+/* LORE CARDS */
+.lore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.lore-card {
+  border: 1px solid var(--border);
+  background: rgba(20,8,8,0.5);
+  padding: 36px 32px;
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.lore-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--scarlet-light);
+  transition: height 0.4s ease;
+}
+
+.lore-card:hover::before { height: 100%; }
+.lore-card:hover {
+  border-color: var(--border-bright);
+  background: rgba(30,14,14,0.7);
+}
+
+.lore-icon { font-size: 28px; margin-bottom: 18px; display: block; }
+
+.lore-title {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--scarlet-light);
+  margin-bottom: 14px;
+}
+
+.lore-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* FAMILY */
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.family-card {
+  border: 1px solid var(--border);
+  background: rgba(20,8,8,0.5);
+  padding: 28px 24px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.family-card:hover { border-color: var(--border-bright); }
+
+.family-role {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+
+.family-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--scarlet-light);
+  margin-bottom: 6px;
+}
+
+.family-detail {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* RELATIONS */
+.relations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.relation-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: start;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.relation-item:last-child { border-bottom: none; }
+
+.relation-name {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--scarlet-light);
+  padding-top: 2px;
+}
+
+.relation-role {
+  font-size: 11px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+.relation-text {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* QUOTE */
+.quote-section {
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.quote-mark {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 120px;
+  color: var(--scarlet-light);
+  opacity: 0.08;
+  position: absolute;
+  top: -40px; left: -20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.quote-text {
+  font-size: clamp(20px, 3vw, 28px);
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-source {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 28px;
+}
+
+.note-box {
+  border-left: 2px solid var(--scarlet-light);
+  background: rgba(139,26,26,0.08);
+  padding: 20px 28px;
+  margin-top: 32px;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+.divider {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  color: var(--text-faint);
+  background: rgba(139,26,26,0.06);
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.footer-name {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 22px;
+  color: var(--scarlet-light);
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.footer-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 32px;
+}
+
+.footer-note {
+  font-size: 13px;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .lore-grid { grid-template-columns: 1fr; }
+  .family-grid { grid-template-columns: 1fr; }
+  .relation-item { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Emrys Fenn</div>
+  <ul class="nav-links">
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#story">Character</a></li>
+    <li><a href="#family">Family</a></li>
+    <li><a href="#relations">Relations</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Original Character · Harry Potter Universe</p>
+
+  <div class="hero-badge">
+    <span>🦁 Gryffindor · Class of 1990</span>
+  </div>
+
+  <h1 class="hero-name-en">Emrys Fenn</h1>
+  <p class="hero-name-ja">エムリス・フェン</p>
+
+  <div class="hero-divider"></div>
+
+  <p class="hero-tagline">
+    「行こうぜ！」のひと言で、<br>
+    誰もが自然と笑顔になる男がいた。
+  </p>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section" id="profile">
+  <div class="stats-inner">
+
+    <div class="stats-grid reveal">
+      <div class="stat-cell">
+        <div class="stat-label">所属寮</div>
+        <div class="stat-value">Gryffindor</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">入学年</div>
+        <div class="stat-value">1990年</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">血統</div>
+        <div class="stat-value">純血（こだわりなし）</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-label">得意科目</div>
+        <div class="stat-value">変身術</div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">About</div>
+      <h2 class="section-title">勇気・誠実・自由・愛情・幸福を体現する男</h2>
+    </div>
+
+    <div class="lore-grid reveal">
+      <div class="lore-card">
+        <span class="lore-icon">☀️</span>
+        <div class="lore-title">THE 陽キャ</div>
+        <div class="lore-text">「ノリと勢いで行こうぜ！」が口癖のような男だが、その明るさは作り物でもなく、無理してもいない。生まれつきそういう人間なのだ。誰といても場が明るくなり、気づけばその場の全員が笑っている。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">🤝</span>
+        <div class="lore-title">リーダーの隣に立つ男</div>
+        <div class="lore-text">大人数の陽キャグループのリーダー格の親友。自分がリーダーになるタイプではないが、リーダーが引っ張る先へ誰よりも早く走り、みんなを巻き込んでいく。そのエネルギーがグループの推進力になっている。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">🧡</span>
+        <div class="lore-title">血筋へのこだわりなし</div>
+        <div class="lore-text">純血の家系だが、血統への関心がまったくない。「その人がどんな人間か」でしか人を判断しない。マグル生まれだろうと半巨人だろうと、面白ければ友達。それだけ。</div>
+      </div>
+      <div class="lore-card">
+        <span class="lore-icon">🧙</span>
+        <div class="lore-title">変身術の使い手</div>
+        <div class="lore-text">得意科目は変身術。機転が利き、状況に応じて柔軟に魔法を使いこなす。クィディッチは「怪我したくないから」という明快な理由でチームに入っていないが、箒の腕前は相当なもの。</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CHARACTER -->
+<section id="story">
+  <div class="reveal">
+    <div class="section-label">Character</div>
+    <h2 class="section-title">エムリス・フェンという人間</h2>
+  </div>
+
+  <div class="lore-grid reveal">
+    <div class="lore-card">
+      <span class="lore-icon">👁️</span>
+      <div class="lore-title">見た目</div>
+      <div class="lore-text">茶色い天パの持ち主。その日の天候によってくるくる具合が変わるので、雨の日はいつもより巻きがきつい。青い瞳はぱっちりと大きく、笑うと目が細くなる。「THE アメリカン」な愛らしい顔立ち（イギリス人だが）。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">💬</span>
+      <div class="lore-title">話し方・雰囲気</div>
+      <div class="lore-text">声が大きく、よく笑う。テンポが速く、会話のリズムを自然に作るのが上手い。後輩にも友達みたいに話しかけるが、嫌みがなく自然と慕われる。誰かが落ち込んでいると、説教はせずにとにかく笑わせようとする。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">💘</span>
+      <div class="lore-title">恋愛観</div>
+      <div class="lore-text">好きな人はいるが、自分からは積極的に動かないタイプ。気持ちを抱えたまま、いつも通りの明るさで接し続ける。そのギャップに気づく人はほとんどいない。</div>
+    </div>
+    <div class="lore-card">
+      <span class="lore-icon">✨</span>
+      <div class="lore-title">名前の意味</div>
+      <div class="lore-text">Emrys（エムリス）：ウェールズ語「不死・永遠」→ 変わらない誠実さと自由。Fenn（フェン）：古英語「自由な土地」→ 広がりと開放感。五つの意味——勇気・誠実・自由・愛情・幸福——を全身で体現する名前。</div>
+    </div>
+  </div>
+
+  <div class="tag-row reveal">
+    <span class="tag">Gryffindor</span>
+    <span class="tag">Pure-blood</span>
+    <span class="tag">Year 2 → 7</span>
+    <span class="tag">Transfiguration</span>
+    <span class="tag">No prejudice</span>
+    <span class="tag">Blue eyes</span>
+    <span class="tag">Curly hair</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="quote-inner">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">
+      行こうぜ。考えるのは後でいい。<br>まず動いた奴が一番楽しいんだから。
+    </p>
+    <p class="quote-source">— Emrys Fenn</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- FAMILY -->
+<section id="family">
+  <div class="reveal">
+    <div class="section-label">Family</div>
+    <h2 class="section-title">フェン家の人々</h2>
+  </div>
+
+  <div class="family-grid reveal">
+    <div class="family-card">
+      <div class="family-role">Father</div>
+      <div class="family-name">フェン家・父</div>
+      <div class="family-detail">純血の魔法使い。血統よりも人柄を重んじる穏やかな人物。エムリスの明るさはこの父親譲り。</div>
+    </div>
+    <div class="family-card">
+      <div class="family-role">Mother</div>
+      <div class="family-name">フェン家・母</div>
+      <div class="family-detail">家族の中心的存在。三姉弟をおおらかに育てた。エムリスが一番のお気に入りだとは言わないが、顔に出ている。</div>
+    </div>
+    <div class="family-card">
+      <div class="family-role">1st Sister（卒業済み）</div>
+      <div class="family-name">長女</div>
+      <div class="family-detail">グリフィンドール卒業生。エムリスが2年生の時にはすでに魔法界で働いている。弟を何かと心配している。</div>
+    </div>
+    <div class="family-card">
+      <div class="family-role">2nd Sister（7年生）</div>
+      <div class="family-name">次女</div>
+      <div class="family-detail">レイブンクロー在学中。エムリスが2年生の時はホグワーツ最終学年。頭脳派で、弟の「ノリと勢い」スタイルを呆れながらも愛している。</div>
+    </div>
+    <div class="family-card" style="border-color: rgba(192,57,43,0.5); background: rgba(139,26,26,0.1);">
+      <div class="family-role">3rd · Youngest</div>
+      <div class="family-name">Emrys Fenn</div>
+      <div class="family-detail">三姉弟の末っ子。二人の姉に愛されて育った、愛情の塊。</div>
+    </div>
+  </div>
+
+  <div class="note-box reveal">
+    三姉弟でグリフィンドール・レイブンクロー・グリフィンドールという並び。純血ではあるが歴史が長いわけでもなく、家族全員が血筋よりも「人」を見るフェン家の気風がエムリスの価値観の根っこにある。
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RELATIONS -->
+<section id="relations">
+  <div class="reveal">
+    <div class="section-label">Relations</div>
+    <h2 class="section-title">交友関係</h2>
+  </div>
+
+  <div class="relations-list reveal">
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">グリフィンドールの同学年たち</div>
+        <div class="relation-role">仲間・グループの中心</div>
+      </div>
+      <div class="relation-text">
+        男女混合の大人数陽キャグループの一員。リーダー格の親友の隣にいつもいる。特別なことをするわけでもないのに、エムリスがいるだけでその場の熱量が上がる。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">フレッド＆ジョージ・ウィーズリー</div>
+        <div class="relation-role">同学年の仲間</div>
+      </div>
+      <div class="relation-text">
+        1年後輩だが関係ない。ウィーズリー双子のノリはエムリスと相性抜群で、廊下でいつも何かを企んでいる三人組になりがち。教師たちの頭痛の種のひとつ。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">セドリック・ディゴリー</div>
+        <div class="relation-role">先輩後輩を超えた友人</div>
+      </div>
+      <div class="relation-text">
+        ハッフルパフだが関係なく仲が良い。セドリックの誠実さをエムリスは素直に尊敬している。寮の壁を超えた、ホグワーツ内では珍しい友情。
+      </div>
+    </div>
+
+    <div class="relation-item">
+      <div>
+        <div class="relation-name">ハリー・ポッターたち</div>
+        <div class="relation-role">後輩・明るく見守る先輩</div>
+      </div>
+      <div class="relation-text">
+        ハリー、ロン、ハーマイオニーに対して、説教がましくなく自然体で関わる先輩。「困ったことがあったら言えよ」とさらっと言って、本当に力になってくれる人。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Emrys Fenn</div>
+  <div class="footer-sub">Original Character · Gryffindor · Est. 1990</div>
+  <p class="footer-note">
+    Harry Potter and all related characters are the property of J.K. Rowling and Warner Bros.<br>
+    This is a fan-created original character for personal creative use.
+  </p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
